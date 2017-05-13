@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Android Runtime Optimization v0.7.5 by veez21
+# Android Runtime Optimization v0.8 by veez21
 # Non-Magisk Module
 
 # Put this in:
@@ -41,8 +41,10 @@ if [ $API -ge 25 ]; then
   set_prop pm.dexopt.bg-dexopt $filter
   if [ $ram -le 1024 ]; then
     set_prop dalvik.vm.dex2oat-swap true
+	set_prop dalvik.vm.heaptargetutilization 0.9
   else
     set_prop dalvik.vm.dex2oat-swap false
+	set_prop dalvik.vm.heaptargetutilization 0.75
   fi
 fi
 ## Don't touch me :P
