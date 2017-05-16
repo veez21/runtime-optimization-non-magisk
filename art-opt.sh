@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Android Runtime Optimization v0.9 by veez21
+# Android Runtime Optimization v0.9.1 by veez21
 # Non-Magisk Module
 set -x 2>/cache/art-opt.log
 # Put this in:
@@ -37,7 +37,7 @@ set_prop dalvik.vm.check-dex-sum false
 set_prop dalvik.vm.checkjni false
 set_prop dalvik.vm.execution-mode int:jit
 set_prop dalvik.vm.dex2oat-thread_count 4
-set_prop dalvik.vm.dexopt-flags v=n
+set_prop dalvik.vm.dexopt-flags v=a,o=v
 if [ $API -ge 25 ]; then
   set_prop pm.dexopt.bg-dexopt $filter
   if [ $ram -le 1024 ]; then
